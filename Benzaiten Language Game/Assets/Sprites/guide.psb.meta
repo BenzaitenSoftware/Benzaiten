@@ -5105,8 +5105,20 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
+  boneGOs:
+  - go: {fileID: 9070212741610405479, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 0
+  - go: {fileID: -7741068269663721720, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 1
+  - go: {fileID: 2342669759571074120, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 2
+  - go: {fileID: -571167240543856901, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 3
+  - go: {fileID: 3879790060687344051, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 4
+  - go: {fileID: -1942633892829392250, guid: cac5df9df3433d44caaa9113fb3eb161, type: 3}
+    index: 5
   generateGOHierarchy: 1
   textureAssetName: guide Texture
   prefabAssetName: guide Prefab
   spriteLibAssetName: guide Sprite Lib
-  secondarySpriteTextures: []

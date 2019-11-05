@@ -3560,8 +3560,24 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
+  boneGOs:
+  - go: {fileID: -7484176817857299450, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 0
+  - go: {fileID: -1171668714822282025, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 1
+  - go: {fileID: 350165337206082824, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 2
+  - go: {fileID: 2191827834262332639, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 3
+  - go: {fileID: 5434852420986299888, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 4
+  - go: {fileID: 4818606554826684835, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 5
+  - go: {fileID: 6594600461076745993, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 6
+  - go: {fileID: -7943967107951706178, guid: 4d791aa708e49a24e8cdc3f7894ff582, type: 3}
+    index: 7
   generateGOHierarchy: 1
   textureAssetName: kaeru Texture
   prefabAssetName: kaeru Prefab
   spriteLibAssetName: kaeru Sprite Lib
-  secondarySpriteTextures: []

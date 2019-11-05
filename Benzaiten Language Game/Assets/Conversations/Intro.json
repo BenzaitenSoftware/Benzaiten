@@ -1,0 +1,93 @@
+{
+  "messageList": [
+    {
+      "text": "Konnichiwa ~~! Its been a long time, I'm glad you've arrived safely. Nihon he youkoso! That means welcome to Japan. How are you feeling?",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "I'm feeling excited!": 1
+      }
+    },
+    {
+      "text": "I'm feeling excited!",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "I bet! Lets go catch up. My favourite cafe isn't far from here.",
+      "player": false,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "It's  gonna be real fun for you to make friends with loadsa new people. It'll take time to learn the language, but making those new connections is really worth it, you know?",
+      "player": false,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "How about I teach you a little bit of Japanese right now so you can make a go at saying hello and introducing yourself to the folks in the cafe ? ",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Yes please!": 5,
+        "Nah, I'm good thanks": 11
+      }
+    },
+    {
+      "text": "Yes please!",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "Ok! The way to say hello, how are you: 'Konnichiwa, genki desu ka?'",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Could you repeat that for me?": 6,
+        "So, how do I respond?": 7,
+        "Thanks, that's enough for today.": 11
+      }
+    },
+    {
+      "text": "So, how do I respond?",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "So if someone asks you 'Genki desu ka ? ' you say: 'Hai, genki desu'",
+      "player": false,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "Oh, we're nearly at the cafe now! If you want to know anymore phrases just come and ask!",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "I will do!": 11
+      }
+    },
+    {
+      "text": "I will do!",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "Okay! If you can't remember any phrases check the phrasebook in your phone or come ask me.",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    },
+    {
+      "text": "We're here! I hope you like it as much as I do. I come every day, so you should join me.",
+      "player": true,
+      "branching": false,
+      "branches": {}
+    }
+  ]
+}

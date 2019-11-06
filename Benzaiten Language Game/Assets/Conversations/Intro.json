@@ -80,7 +80,7 @@
       "player": false,
       "branching": true,
       "branches": {
-        "I will do!": 11
+        "I will do!": 10
       }
     },
     {
@@ -93,7 +93,7 @@
     },
     {
       "text": "Okay! If you can't remember any phrases check the phrasebook in your phone or come ask me.",
-      "player": true,
+      "player": false,
       "branching": false,
       "branches": {
         "Next": 12
@@ -101,7 +101,7 @@
     },
     {
       "text": "We're here! I hope you like it as much as I do. I come every day, so you should join me.",
-      "player": true,
+      "player": false,
       "branching": false,
       "branches": {
         "Next": -1

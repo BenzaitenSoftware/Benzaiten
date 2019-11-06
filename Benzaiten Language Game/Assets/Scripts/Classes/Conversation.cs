@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using Newtonsoft.Json;
 
 public class Conversation
@@ -9,7 +10,7 @@ public class Conversation
     private Message[] messageList;
     private string NPC;
 
-    private int currentMessage = -1;
+    private int currentMessage = 0;
 
     public Conversation(Message[] messageList)
     {
@@ -18,10 +19,22 @@ public class Conversation
 
     public Message NextMessage()
     {
-        currentMessage++;
-        if (currentMessage < messageList.Length)
+        if (currentMessage == 0)
         {
-            return messageList[currentMessage];
+            return messageList[0];
+        }
+        else if (currentMessage < messageList.Length)
+        {
+            currentMessage = messageList[currentMessage].Branches["Next"];
+            if (currentMessage != -1)
+            {
+                return messageList[currentMessage];
+            }
+            else
+            {
+                return null;
+            }
+            
         }
         else
         {

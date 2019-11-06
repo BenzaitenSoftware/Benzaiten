@@ -12,19 +12,25 @@
       "text": "I'm feeling excited!",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 2
+      }
     },
     {
       "text": "I bet! Lets go catch up. My favourite cafe isn't far from here.",
       "player": false,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 3
+      }
     },
     {
       "text": "It's  gonna be real fun for you to make friends with loadsa new people. It'll take time to learn the language, but making those new connections is really worth it, you know?",
       "player": false,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 4
+      }
     },
     {
       "text": "How about I teach you a little bit of Japanese right now so you can make a go at saying hello and introducing yourself to the folks in the cafe ? ",
@@ -39,7 +45,9 @@
       "text": "Yes please!",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 6
+      }
     },
     {
       "text": "Ok! The way to say hello, how are you: 'Konnichiwa, genki desu ka?'",
@@ -55,13 +63,17 @@
       "text": "So, how do I respond?",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 8
+      }
     },
     {
       "text": "So if someone asks you 'Genki desu ka ? ' you say: 'Hai, genki desu'",
       "player": false,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 9
+      }
     },
     {
       "text": "Oh, we're nearly at the cafe now! If you want to know anymore phrases just come and ask!",
@@ -75,19 +87,25 @@
       "text": "I will do!",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 11
+      }
     },
     {
       "text": "Okay! If you can't remember any phrases check the phrasebook in your phone or come ask me.",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": 12
+      }
     },
     {
       "text": "We're here! I hope you like it as much as I do. I come every day, so you should join me.",
       "player": true,
       "branching": false,
-      "branches": {}
+      "branches": {
+        "Next": -1
+      }
     }
   ]
 }

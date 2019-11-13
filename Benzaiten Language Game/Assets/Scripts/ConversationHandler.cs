@@ -12,6 +12,8 @@ public class ConversationHandler : MonoBehaviour
     private TextMeshProUGUI playerBubble, npcBubble;
     [SerializeField]
     private Text[] buttonList;
+    [SerializeField]
+    private Animator playerAnim, npcAnim;
 
     private Conversation currentConversation;
     private Message currentMessage;
@@ -21,7 +23,7 @@ public class ConversationHandler : MonoBehaviour
     private int textIndex;
     private bool typing;
 
-    // TESTING CODE
+    // TESTING OBJECT
     public GameObject endPanel;
 
     // Start is called before the first frame update
@@ -30,17 +32,19 @@ public class ConversationHandler : MonoBehaviour
         lastTime = Time.time;
         delay = 0.02f;
 
-        try
-        {
-            fileName = GameObject.Find("DataHolder").GetComponent<DataHolder>().fileName;
-        }
-        catch (Exception e)
-        {
-            endPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Please start game from main menu only!";
-            endPanel.SetActive(true);
-        }
+        //try
+        //{
+        //    fileName = GameObject.Find("DataHolder").GetComponent<DataHolder>().fileName;
+        //}
+        //catch (Exception e)
+        //{
+        //    endPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Please start game from main menu only!";
+        //    endPanel.SetActive(true);
+        //}
 
-        currentConversation = JsonConvert.DeserializeObject<Conversation>(File.ReadAllText(Application.dataPath + "/Conversations/" + fileName));
+        fileName = "test.json";
+
+        currentConversation = JsonConvert.DeserializeObject<Conversation>(File.ReadAllText("Assets/Conversations/" + fileName));
 
         //Message[] messageList = new Message[13];
 
@@ -71,8 +75,7 @@ public class ConversationHandler : MonoBehaviour
 
         //currentConversation = new Conversation(messageList);
 
-        //File.WriteAllText(Application.dataPath + "/Conversations/test.json",JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
-
+        File.WriteAllText("Assets/Conversations/test.json",JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
 
         NextMessage();
     }
@@ -155,6 +158,9 @@ public class ConversationHandler : MonoBehaviour
 
         playerBubble.text = "";
         npcBubble.text = "";
+
+        playerAnim.SetInteger("MessageState", currentMessage.PlayerAnimState);
+        npcAnim.SetInteger("MessageState", currentMessage.NpcAnimState);
 
         if (currentMessage.Branching)
         {

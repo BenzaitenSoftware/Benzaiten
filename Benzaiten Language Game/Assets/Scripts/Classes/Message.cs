@@ -13,8 +13,10 @@ public class Message
     private bool branching;
     [JsonProperty]
     private Dictionary<string, int> branches;
-
-    private Animation anim;
+    [JsonProperty]
+    private int playerAnimState, npcAnimState;
+    [JsonProperty]
+    private float progression;
 
     public Message(string text, bool player)
     {
@@ -60,6 +62,30 @@ public class Message
         get
         {
             return branches;
+        }
+    }
+    [JsonIgnore]
+    public int PlayerAnimState
+    {
+        get
+        {
+            return playerAnimState;
+        }
+    }
+    [JsonIgnore]
+    public int NpcAnimState
+    {
+        get
+        {
+            return npcAnimState;
+        }
+    }
+    [JsonIgnore]
+    public float Progression
+    {
+        get
+        {
+            return progression;
         }
     }
 }

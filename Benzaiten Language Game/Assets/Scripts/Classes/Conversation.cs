@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Newtonsoft.Json;
+using System;
 
 public class Conversation
 {
     [JsonProperty]
     private Message[] messageList;
+    [JsonProperty]
     private string NPC;
 
     private int currentMessage = 0;
@@ -25,16 +27,17 @@ public class Conversation
         }
         else if (currentMessage < messageList.Length)
         {
-            currentMessage = messageList[currentMessage].Branches["Next"];
-            if (currentMessage != -1)
+            int nextIndex = messageList[currentMessage].Branches["Next"];
+            if (nextIndex != -1)
             {
+                currentMessage = nextIndex;
                 return messageList[currentMessage];
             }
             else
             {
+                GameObject.Find("DataHolder").SendMessage("AddProgression", new string[] { NPC, messageList[currentMessage].Progression.ToString() });
                 return null;
-            }
-            
+            }  
         }
         else
         {

@@ -5,7 +5,7 @@
       "player": false,
       "branching": true,
       "branches": {
-        "Watashi no namae wa ~~ desu. Anata wa?": 1,
+        "Watashi no namae wa ~ desu. Anata wa?": 1,
         "Konnichiwa!": 2,
         "Sumimasen": 3,
         "Sorry, I don't understand": 4,
@@ -16,7 +16,7 @@
       "progression": 0.0
     },
     {
-      "text": "Watashi no namae wa ~~ desu. Anata wa?",
+      "text": "Watashi no namae wa ~ desu. Anata wa?",
       "player": true,
       "branching": false,
       "branches": {
@@ -115,7 +115,7 @@
       "progression": 0.0
     },
     {
-      "text": "~~san wa genki desu ka?",
+      "text": "~san wa genki desu ka?",
       "player": false,
       "branching": true,
       "branches": {

@@ -9,11 +9,16 @@ public class DataHolder : MonoBehaviour
 {
     [JsonIgnore]
     public string fileName;
-    public Dictionary<string, float> playerProgression;
+    private string playerName;
+    private PhraseBook phraseBook;
+    private Dictionary<string, float> playerProgression;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerName = "Luke";
+        phraseBook = new PhraseBook();
+
         if (File.Exists("Assets/PlayerData/Player.save"))
         {
             playerProgression = JsonConvert.DeserializeObject<Dictionary<string, float>>(File.ReadAllText("Assets/PlayerData/Player.save"));
@@ -28,16 +33,16 @@ public class DataHolder : MonoBehaviour
     private void OnApplicationQuit()
     {
         Debug.Log("Application Quit!");
-        File.WriteAllText("Assets/PlayerData/Player.json", JsonConvert.SerializeObject(playerProgression, Formatting.Indented));
+        File.WriteAllText("Assets/PlayerData/" + playerName + ".json", JsonConvert.SerializeObject(playerProgression, Formatting.Indented));
     }
 
     public void LoadConversation(string fileName)
     {
         this.fileName = fileName;
-        SceneManager.LoadScene("Testing");
+        SceneManager.LoadScene("ConversationScene");
     }
 
-    public void AddProgression(string[] input)
+    public void SetProgression(string[] input)
     {
         string name = input[0];
         float points = float.Parse(input[1]);
@@ -45,13 +50,30 @@ public class DataHolder : MonoBehaviour
         Debug.Log(name);
         Debug.Log(points);
 
-        if (playerProgression.ContainsKey(name))
+        playerProgression[name] = points;
+    }
+
+    public string PlayerName
+    {
+        get
         {
-            playerProgression[name] += points;
+            return playerName;
         }
-        else
+        set
         {
-            playerProgression[name] = points;
+            name = value;
+        }
+    }
+
+    public Dictionary<string,float> PlayerProgression
+    {
+        get
+        {
+            return playerProgression;
+        }
+        set
+        {
+            playerProgression = value;
         }
     }
 }

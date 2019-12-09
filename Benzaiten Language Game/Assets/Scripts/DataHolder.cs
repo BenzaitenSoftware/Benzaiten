@@ -27,6 +27,10 @@ public class DataHolder : MonoBehaviour
         {
             playerProgression = new Dictionary<string, float>();
         }
+
+        // TESTING CODE
+        playerProgression = new Dictionary<string, float>();
+
         DontDestroyOnLoad(this);
     }
 
@@ -34,6 +38,16 @@ public class DataHolder : MonoBehaviour
     {
         Debug.Log("Application Quit!");
         File.WriteAllText("Assets/PlayerData/" + playerName + ".json", JsonConvert.SerializeObject(playerProgression, Formatting.Indented));
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("CafeScene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
     public void LoadConversation(string fileName)

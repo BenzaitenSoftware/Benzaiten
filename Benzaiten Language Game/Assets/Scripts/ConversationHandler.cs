@@ -104,7 +104,8 @@ public class ConversationHandler : MonoBehaviour
 
         if (currentMessage == null)
         {
-            endPanel.SetActive(true);
+            GameObject.Find("DataHolder").GetComponent<DataHolder>().Play();
+            //endPanel.SetActive(true);
         }
     }
 

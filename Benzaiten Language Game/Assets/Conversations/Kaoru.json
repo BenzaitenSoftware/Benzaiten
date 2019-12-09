@@ -239,7 +239,7 @@
       },
       "playerAnimState": 0,
       "npcAnimState": 0,
-      "progression": 0.0
+      "progression": 1.0
     },
     {
       "text": "He looks a little confused and goes back to drinking his tea",
@@ -264,5 +264,5 @@
       "progression": 0.0
     }
   ],
-  "NPC": null
+  "NPC": "Kaoru"
 }

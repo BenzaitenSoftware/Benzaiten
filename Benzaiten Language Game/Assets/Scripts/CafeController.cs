@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class CafeController : MonoBehaviour
     private Dictionary<int, string> tableSettings;
     private DataHolder dataHolder;
     public GameObject panel;
+    public TextMeshProUGUI text;
 
     void Start()
     {
@@ -22,13 +24,20 @@ public class CafeController : MonoBehaviour
         tableSettings[1] = "Kaoru";
         tableSettings[2] = "Guide";
 
-        foreach (int progress in dataHolder.PlayerProgression.Values)
+        string names = "";
+
+        foreach (string name in dataHolder.PlayerProgression.Keys)
         {
-            if (progress >= 1)
+            if (dataHolder.PlayerProgression[name] >= 1)
             {
-                panel.SetActive(true);
-                break;
+                names += (name + " ");
             }
+        }
+
+        if (names != "")
+        {
+            text.text = "One or more conversations completed! Your friends are now: " + names + ". (Social Media to be Implemented!)";
+            panel.SetActive(true);
         }
     }
 

@@ -14,6 +14,8 @@ public class ConversationHandler : MonoBehaviour
     private Text[] buttonList;
     [SerializeField]
     private Animator playerAnim, npcAnim;
+    [SerializeField]
+    private GameObject guide, kaoru, playerHolder, npcHolder;
 
     private string playerName;
 
@@ -53,6 +55,7 @@ public class ConversationHandler : MonoBehaviour
 
         File.WriteAllText("Assets/Conversations/" + fileName,JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
 
+        LoadCharacters();
         NextMessage();
     }
 
@@ -107,6 +110,27 @@ public class ConversationHandler : MonoBehaviour
             GameObject.Find("DataHolder").GetComponent<DataHolder>().Play();
             //endPanel.SetActive(true);
         }
+    }
+
+    private void LoadCharacters()
+    {
+        GameObject npcPrefab;
+
+        Debug.Log(currentConversation.NPC);
+
+        switch (currentConversation.NPC)
+        {
+            case "Kaoru":
+                npcPrefab = kaoru;
+                break;
+            default:
+                npcPrefab = guide;
+                break;
+        }
+
+        GameObject NPC = Instantiate(npcPrefab, npcHolder.transform);
+        npcAnim = NPC.GetComponent<Animator>();
+        playerAnim = playerHolder.GetComponent<Animator>();
     }
 
     private void NextMessage()

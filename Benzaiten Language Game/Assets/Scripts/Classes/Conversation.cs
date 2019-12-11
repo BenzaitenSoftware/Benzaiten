@@ -9,8 +9,7 @@ public class Conversation
 {
     [JsonProperty]
     private Message[] messageList;
-    [JsonProperty]
-    private string NPC;
+    private string NPCString;
 
     private int currentMessage = 0;
 
@@ -35,7 +34,7 @@ public class Conversation
             }
             else
             {
-                GameObject.Find("DataHolder").SendMessage("SetProgression", new string[] { NPC, messageList[currentMessage].Progression.ToString() });
+                GameObject.Find("DataHolder").SendMessage("SetProgression", new string[] { NPCString, messageList[currentMessage].Progression.ToString() });
                 return null;
             }  
         }
@@ -55,6 +54,19 @@ public class Conversation
         else
         {
             return null;
+        }
+    }
+
+    public string NPC
+    {
+        get
+        {
+            return NPCString;
+        }
+
+        set
+        {
+            NPCString = value;
         }
     }
 }

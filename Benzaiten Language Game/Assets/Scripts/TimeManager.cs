@@ -5,14 +5,14 @@ using UnityEngine.Networking;
 
 public class TimeManager : MonoBehaviour
 {
-    private string url = "localhost:8000/test.php";
+    private string url = "lukejansen.co.uk/benzaiten/time.php";
     private string currentDate;
     private string lastDate;
 
     private void Start()
     {
         StartCoroutine(GetTimeFromServer());
-        lastDate = "30/10/2019";
+        lastDate = "12-11-2019";
     }
 
     IEnumerator GetTimeFromServer()
@@ -32,6 +32,7 @@ public class TimeManager : MonoBehaviour
             else
             {
                 currentDate = webRequest.downloadHandler.text;
+                Debug.Log(currentDate);
                 CompareDate();
             }
         }

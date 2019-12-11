@@ -61,9 +61,6 @@ public class DataHolder : MonoBehaviour
         string name = input[0];
         float points = float.Parse(input[1]);
 
-        Debug.Log(name);
-        Debug.Log(points);
-
         playerProgression[name] = points;
     }
 

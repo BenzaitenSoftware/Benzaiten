@@ -11,7 +11,6 @@ public class PanelClickScript : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         cafe = GameObject.FindGameObjectWithTag("Cafe").GetComponent<CafeController>();
-        Debug.Log(cafe);
     }
 
     public void OnPointerClick(PointerEventData pointerEvent)

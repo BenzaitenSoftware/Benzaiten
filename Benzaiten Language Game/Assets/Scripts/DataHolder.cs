@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -12,6 +13,7 @@ public class DataHolder : MonoBehaviour
     private string playerName;
     private PhraseBook phraseBook;
     private Dictionary<string, float> playerProgression;
+    private UnityWebRequest dateConnection;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,20 @@ public class DataHolder : MonoBehaviour
     {
         Debug.Log("Application Quit!");
         File.WriteAllText("Assets/PlayerData/" + playerName + ".json", JsonConvert.SerializeObject(playerProgression, Formatting.Indented));
+    }
+
+    public void Splash(bool connection, UnityWebRequest uwr)
+    {
+        dateConnection = uwr;
+
+        if (connection)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            Debug.Log("CONNECTION FAILED");
+        }
     }
 
     public void Play()

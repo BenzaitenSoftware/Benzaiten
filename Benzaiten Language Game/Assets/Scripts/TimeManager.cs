@@ -28,12 +28,14 @@ public class TimeManager : MonoBehaviour
             if (webRequest.isNetworkError)
             {
                 Debug.Log(webRequest.error);
+                GameObject.Find("DataHolder").GetComponent<DataHolder>().Splash(false, webRequest);
             }
             else
             {
                 currentDate = webRequest.downloadHandler.text;
                 Debug.Log(currentDate);
                 CompareDate();
+                GameObject.Find("DataHolder").GetComponent<DataHolder>().Splash(true, webRequest);
             }
         }
     }

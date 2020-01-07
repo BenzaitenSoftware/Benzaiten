@@ -26,12 +26,6 @@ public class Message
         branches = new Dictionary<string, int>();
     }
 
-    public void AddOption(string buttonText, int index)
-    {
-        branching = true;
-        branches.Add(buttonText, index);
-    }
-
     [JsonIgnore]
     public string Text
     {

@@ -19,7 +19,7 @@ public class DataHolder : MonoBehaviour
     void Start()
     {
         playerName = "Luke";
-        phraseBook = new PhraseBook();
+        //phraseBook = new PhraseBook();
 
         if (File.Exists("Assets/PlayerData/Player.save"))
         {
@@ -48,7 +48,7 @@ public class DataHolder : MonoBehaviour
 
         if (connection)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {

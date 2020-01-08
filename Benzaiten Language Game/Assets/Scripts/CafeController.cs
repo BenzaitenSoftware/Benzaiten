@@ -51,6 +51,8 @@ public class CafeController : MonoBehaviour
 
     public void TableClick(int tableNumber)
     {
+        Debug.Log(tableNumber);
+
         if (tableSettings.ContainsKey(tableNumber))
         {
             Debug.Log(tableSettings[tableNumber] + "'s Table has been clicked!");

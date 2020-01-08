@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonSetup : MonoBehaviour
@@ -9,13 +10,19 @@ public class ButtonSetup : MonoBehaviour
 
     void Start()
     {
+        Button button = GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+    }
+
+    void OnClick()
+    {
         if (MethodName == "Play")
         {
-            gameObject.GetComponent<Button>().onClick.AddListener(GameObject.Find("DataHolder").GetComponent<DataHolder>().Play);
+            SceneManager.LoadScene("CafeScene");
         }
-        else
+        else if (MethodName == "Exit")
         {
-            gameObject.GetComponent<Button>().onClick.AddListener(GameObject.Find("DataHolder").GetComponent<DataHolder>().Exit);
+            Application.Quit();
         }
     }
 }

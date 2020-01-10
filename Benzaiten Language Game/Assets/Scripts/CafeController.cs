@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,21 @@ public class CafeController : MonoBehaviour
 
     void Start()
     {
-        dataHolder = GameObject.Find("DataHolder").GetComponent<DataHolder>();
+        try
+        {
+            dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.StackTrace);
+        }
+
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        foreach (GameObject go in allObjects)
+            if (go.name == "DataHolder")
+                print("DataHolder is Present!");
+
+        Debug.Log(dataHolder);
 
         float height = Camera.main.orthographicSize * 2.0f;
         float width = Camera.main.orthographicSize * 2.0f * Screen.width / Screen.height;
@@ -51,8 +66,6 @@ public class CafeController : MonoBehaviour
 
     public void TableClick(int tableNumber)
     {
-        Debug.Log(tableNumber);
-
         if (tableSettings.ContainsKey(tableNumber))
         {
             Debug.Log(tableSettings[tableNumber] + "'s Table has been clicked!");
@@ -61,7 +74,6 @@ public class CafeController : MonoBehaviour
         {
             Debug.Log("Table " + tableNumber + " does not have a person!");
         }
-
         dataHolder.LoadConversation(tableSettings[tableNumber] + ".json");
     }
 }

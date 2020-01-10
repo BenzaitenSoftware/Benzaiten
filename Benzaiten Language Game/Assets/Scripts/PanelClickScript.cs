@@ -15,7 +15,6 @@ public class PanelClickScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEvent)
     {
-        Debug.Log(tableNumber);
         cafe.TableClick(tableNumber);
     }
    

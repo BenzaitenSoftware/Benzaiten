@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
+using UnityEngine.AddressableAssets;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -17,7 +18,9 @@ public class DataHolder : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        DontDestroyOnLoad(this);
+
         playerName = "Luke";
         //phraseBook = new PhraseBook();
 
@@ -32,8 +35,6 @@ public class DataHolder : MonoBehaviour
 
         // TESTING CODE
         playerProgression = new Dictionary<string, float>();
-
-        DontDestroyOnLoad(this);
     }
 
     private void OnApplicationQuit()

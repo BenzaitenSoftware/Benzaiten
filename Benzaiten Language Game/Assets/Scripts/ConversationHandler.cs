@@ -5,6 +5,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
 
 public class ConversationHandler : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class ConversationHandler : MonoBehaviour
     // TESTING OBJECT
     public GameObject endPanel;
 
-    // Start is called before the first frame update
     void Start()
     {
         lastTime = Time.time;
@@ -49,11 +49,14 @@ public class ConversationHandler : MonoBehaviour
             endPanel.SetActive(true);
         }
 
-        //fileName = "test.json";
+        //currentConversation = JsonConvert.DeserializeObject<Conversation>(File.ReadAllText(Application.dataPath + "/Conversations/" + fileName));
 
-        currentConversation = JsonConvert.DeserializeObject<Conversation>(File.ReadAllText("Assets/Conversations/" + fileName));
+        string jsonString = Resources.Load<TextAsset>("Conversations/" + fileName.Replace(".json", "")).ToString();
+        Debug.Log(jsonString);
+        currentConversation = JsonConvert.DeserializeObject<Conversation>(jsonString);
 
-        File.WriteAllText("Assets/Conversations/" + fileName,JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
+        // File Writing Code
+        //File.WriteAllText("Assets/Conversations/" + fileName,JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
 
         LoadCharacters();
         NextMessage();

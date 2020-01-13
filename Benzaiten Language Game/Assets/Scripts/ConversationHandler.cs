@@ -17,7 +17,7 @@ public class ConversationHandler : MonoBehaviour
     private Text[] buttonList;
     private Animator playerAnim, npcAnim;
     [SerializeField]
-    private GameObject guide, kaoru, baristabird, playerHolder, npcHolder;
+    private GameObject guide, kaoru, baristabird, player1, player2, player3, playerHolder, npcHolder;
 
     private string playerName;
 
@@ -29,6 +29,8 @@ public class ConversationHandler : MonoBehaviour
     private int textIndex;
     private bool typing;
 
+    private DataHolder dataHolder;
+
     // TESTING OBJECT
     public GameObject endPanel;
 
@@ -39,7 +41,7 @@ public class ConversationHandler : MonoBehaviour
 
         try
         {
-            DataHolder dataHolder = GameObject.Find("DataHolder").GetComponent<DataHolder>();
+            dataHolder = GameObject.Find("DataHolder").GetComponent<DataHolder>();
             fileName = dataHolder.fileName;
             playerName = dataHolder.player.PlayerName;
         }
@@ -114,7 +116,7 @@ public class ConversationHandler : MonoBehaviour
 
     private void LoadCharacters()
     {
-        GameObject npcPrefab;
+        GameObject npcPrefab, playerPrefab;
 
         switch (currentConversation.NPC)
         {
@@ -133,7 +135,25 @@ public class ConversationHandler : MonoBehaviour
                 break;
         }
 
+        switch (dataHolder.player.PlayerSprite)
+        {
+            case 1:
+                playerPrefab = player1;
+                break;
+            case 2:
+                playerPrefab = player2;
+                break;
+            case 3:
+                playerPrefab = player3;
+                break;
+            default:
+                playerPrefab = player3;
+                break;
+
+        }
+
         GameObject NPC = Instantiate(npcPrefab, npcHolder.transform);
+        GameObject Player = Instantiate (playerPrefab, playerHolder.transform);
         npcAnim = NPC.GetComponent<Animator>();
         playerAnim = playerHolder.GetComponent<Animator>();
     }

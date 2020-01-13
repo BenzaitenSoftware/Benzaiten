@@ -8,6 +8,7 @@ public class Player
 {
 
     private string playerName;
+    private int playerSprite;
     private Dictionary<string, float> playerProgression;
 
     public Player()
@@ -40,6 +41,18 @@ public class Player
         get
         {
             return playerProgression;
+        }
+    }
+
+    public int PlayerSprite
+    {
+        get
+        {
+            return playerSprite;
+        }
+        set
+        {
+            playerSprite = value;
         }
     }
 }

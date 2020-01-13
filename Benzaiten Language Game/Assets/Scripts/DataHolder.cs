@@ -60,9 +60,10 @@ public class DataHolder : MonoBehaviour
         }
     }
 
-    public void SetupPlayer(string name)
+    public void SetupPlayer(string name, int choice)
     {
         player.PlayerName = name;
+        player.PlayerSprite = choice;
         File.WriteAllText(Application.persistentDataPath + "/PlayerData.save", JsonConvert.SerializeObject(player, Formatting.Indented));
         SceneManager.LoadScene("MainMenu");
     }

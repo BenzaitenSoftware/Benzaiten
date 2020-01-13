@@ -31,8 +31,30 @@ public class ButtonSetup : MonoBehaviour
         }
         else if (MethodName == "Setup")
         {
+            int choice = 0;
+
+            if (GameObject.Find("Player1 Panel").GetComponent<PlayerSelector>().selected)
+            {
+                choice = 1;
+            }
+            else if (GameObject.Find("Player2 Panel").GetComponent<PlayerSelector>().selected)
+            {
+                choice = 2;
+            }
+            else if (GameObject.Find("Player3 Panel").GetComponent<PlayerSelector>().selected)
+            {
+                choice = 3;
+            }
+
             string name = GameObject.Find("Name").GetComponent<TextMeshProUGUI>().text;
-            dataHolder.SetupPlayer(name);
+            if (choice == 0 || name == "")
+            {
+                // WARN USER
+            }
+            else
+            {
+                dataHolder.SetupPlayer(name, choice);
+            }
         }
     }
 }

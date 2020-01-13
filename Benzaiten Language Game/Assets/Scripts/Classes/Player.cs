@@ -13,12 +13,9 @@ public class Player
     public Player()
     {
         playerProgression = new Dictionary<string, float>();
-    }
-
-    public Player(string name)
-    {
-        playerName = name;
-        playerProgression = new Dictionary<string, float>();
+        playerProgression["Guide"] = 0;
+        playerProgression["Kaoru"] = 0;
+        playerProgression["BaristaBird"] = 0;
     }
 
     public void SetProgression(string name, float points)

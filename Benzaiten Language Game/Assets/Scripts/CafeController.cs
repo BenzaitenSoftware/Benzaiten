@@ -58,30 +58,25 @@ public class CafeController : MonoBehaviour
 
     private void ProgressionCheck(Scene scene, LoadSceneMode mode)
     {
-        if (dataHolder.player.PlayerProgression.ContainsKey("BaristaBird"))
+        if (dataHolder.player.PlayerProgression["BaristaBird"] >= 1)
         {
-            if (dataHolder.player.PlayerProgression["BaristaBird"] >= 1)
-            {
-                birdPanel.SetActive(true);
-                kaoruPanel.SetActive(true);
-                birdPanel.GetComponent<PanelClickScript>().glow = false;
-                kaoruPanel.GetComponent<PanelClickScript>().glow = false;
-            }
+            birdPanel.SetActive(true);
+            kaoruPanel.SetActive(true);
+            birdPanel.GetComponent<PanelClickScript>().glow = false;
+            kaoruPanel.GetComponent<PanelClickScript>().glow = false;
         }
-        else if (dataHolder.player.PlayerProgression.ContainsKey("Kaoru"))
+        else if (dataHolder.player.PlayerProgression["Kaoru"] >= 1)
         {
-            if (dataHolder.player.PlayerProgression["Kaoru"] >= 1)
-            {
-                birdPanel.SetActive(true);
-                kaoruPanel.SetActive(true);
-                birdPanel.GetComponent<PanelClickScript>().glow = true;
-                kaoruPanel.GetComponent<PanelClickScript>().glow = false;
-            }
+            birdPanel.SetActive(true);
+            kaoruPanel.SetActive(true);
+            birdPanel.GetComponent<PanelClickScript>().glow = true;
+            kaoruPanel.GetComponent<PanelClickScript>().glow = false;
         }
         else if (dataHolder.player.PlayerProgression["Guide"] >= 1)
         {
             kaoruPanel.SetActive(true);
             kaoruPanel.GetComponent<PanelClickScript>().glow = true;
         }
+
     }
 }

@@ -212,7 +212,7 @@
       "player": false,
       "branching": true,
       "branches": {
-        "Give 1500 yen": 21,
+        "Give 1500 yen": 22,
         "Give 800 yen": 21,
         "Give 1300 yen": 21,
         "Could you tell me how much it costs in English?": 21
@@ -259,7 +259,7 @@
       "player": true,
       "branching": false,
       "branches": {
-        "Next": -1
+        "Next": 27
       },
       "playerAnimState": 0,
       "npcAnimState": 1,
@@ -314,7 +314,7 @@
       "player": true,
       "branching": false,
       "branches": {
-        "Next": 21
+        "Next": -1
       },
       "playerAnimState": 0,
       "npcAnimState": 1,

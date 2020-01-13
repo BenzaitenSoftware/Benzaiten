@@ -69,7 +69,7 @@ public class DataHolder : MonoBehaviour
 
     public void Play()
     {
-        if (player.PlayerProgression.ContainsKey("Guide"))
+        if (player.PlayerProgression["Guide"] == 1)
         {
             SceneManager.LoadScene("CafeScene");
         }

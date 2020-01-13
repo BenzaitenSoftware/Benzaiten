@@ -21,7 +21,7 @@ public class PanelClickScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEvent)
     {
-        cafe.TableClick(tableNumber);
+        if (!GameObject.Find("Phone").GetComponent<PhoneManager>().Show)cafe.TableClick(tableNumber);
     }
 
     public void Update()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,30 +9,30 @@ using UnityEngine.UI;
 public class ButtonSetup : MonoBehaviour
 {
     public string MethodName;
+    private DataHolder dataHolder;
 
     void Start()
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
 
-        DirectoryInfo directoryInfo = new DirectoryInfo(Application.streamingAssetsPath);
-        print("Streaming Assets Path: " + Application.streamingAssetsPath);
-        FileInfo[] allFiles = directoryInfo.GetFiles("*");
-        foreach (FileInfo file in allFiles)
-        {
-            print(file.FullName);
-        }
+        dataHolder = GameObject.Find("DataHolder").GetComponent<DataHolder>();
     }
 
     void OnClick()
     {
         if (MethodName == "Play")
         {
-            SceneManager.LoadScene("CafeScene");
+            dataHolder.Play();
         }
         else if (MethodName == "Exit")
         {
-            Application.Quit();
+            dataHolder.Exit();
+        }
+        else if (MethodName == "Setup")
+        {
+            string name = GameObject.Find("Name").GetComponent<TextMeshProUGUI>().text;
+            dataHolder.SetupPlayer(name);
         }
     }
 }

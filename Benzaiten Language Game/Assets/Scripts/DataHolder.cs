@@ -11,9 +11,9 @@ public class DataHolder : MonoBehaviour
 {
     [JsonIgnore]
     public string fileName;
-    private string playerName;
+    public Player player;
+    private bool fileDetected;
     private PhraseBook phraseBook;
-    private Dictionary<string, float> playerProgression;
     private UnityWebRequest dateConnection;
 
     // Start is called before the first frame update
@@ -21,26 +21,22 @@ public class DataHolder : MonoBehaviour
     { 
         DontDestroyOnLoad(this);
 
-        playerName = "Luke";
-        //phraseBook = new PhraseBook();
-
-        if (File.Exists("Assets/PlayerData/Player.save"))
+        if (File.Exists(Application.persistentDataPath + "/PlayerData.save"))
         {
-            playerProgression = JsonConvert.DeserializeObject<Dictionary<string, float>>(File.ReadAllText("Assets/PlayerData/Player.save"));
+            fileDetected = true;
+            player = JsonConvert.DeserializeObject<Player>(File.ReadAllText(Application.persistentDataPath + "/PlayerData.save"));
         }
         else
         {
-            playerProgression = new Dictionary<string, float>();
+            fileDetected = false;
+            player = new Player();
         }
-
-        // TESTING CODE
-        playerProgression = new Dictionary<string, float>();
     }
 
     private void OnApplicationQuit()
     {
         Debug.Log("Application Quit!");
-        File.WriteAllText("Assets/PlayerData/" + playerName + ".json", JsonConvert.SerializeObject(playerProgression, Formatting.Indented));
+        File.WriteAllText(Application.persistentDataPath + "/PlayerData.save", JsonConvert.SerializeObject(player, Formatting.Indented));
     }
 
     public void Splash(bool connection, UnityWebRequest uwr)
@@ -49,7 +45,14 @@ public class DataHolder : MonoBehaviour
 
         if (connection)
         {
-            SceneManager.LoadScene("MainMenu");
+            if (fileDetected)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+            else
+            {
+                SceneManager.LoadScene("PlayerSetup");
+            }
         }
         else
         {
@@ -57,9 +60,24 @@ public class DataHolder : MonoBehaviour
         }
     }
 
+    public void SetupPlayer(string name)
+    {
+        player.PlayerName = name;
+        File.WriteAllText(Application.persistentDataPath + "/PlayerData.save", JsonConvert.SerializeObject(player, Formatting.Indented));
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Play()
     {
-        SceneManager.LoadScene("CafeScene");
+        if (player.PlayerProgression.ContainsKey("Guide"))
+        {
+            SceneManager.LoadScene("CafeScene");
+        }
+        else
+        {
+            LoadConversation("Guide.json");
+        }
+        
     }
 
     public void Exit()
@@ -69,39 +87,8 @@ public class DataHolder : MonoBehaviour
 
     public void LoadConversation(string fileName)
     {
+        Debug.Log(fileName);
         this.fileName = fileName;
         SceneManager.LoadScene("ConversationScene");
-    }
-
-    public void SetProgression(string[] input)
-    {
-        string name = input[0];
-        float points = float.Parse(input[1]);
-
-        playerProgression[name] = points;
-    }
-
-    public string PlayerName
-    {
-        get
-        {
-            return playerName;
-        }
-        set
-        {
-            name = value;
-        }
-    }
-
-    public Dictionary<string,float> PlayerProgression
-    {
-        get
-        {
-            return playerProgression;
-        }
-        set
-        {
-            playerProgression = value;
-        }
     }
 }

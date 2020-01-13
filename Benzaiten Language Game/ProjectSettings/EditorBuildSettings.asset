@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: e42d75e65f82aae449d91952141fc146
   - enabled: 1
+    path: Assets/Scenes/PlayerSetup.unity
+    guid: f0cec3291795f9b48a9ef0138f19d737
+  - enabled: 1
     path: Assets/Scenes/CafeScene.unity
     guid: 9da37acb851c6564a908a555baa930dd
   - enabled: 1

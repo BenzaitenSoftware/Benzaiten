@@ -1,0 +1,347 @@
+{
+  "messageList": [
+    {
+      "text": "Irasshaimase! Kyou wa nani wo tanomimasuka?",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Osusume mono wa nandesuka?": 1,
+        "Hai, genki desu ka?": 2,
+        "Sorry, I don't understand": 4,
+        "Gochisousama deshita!": 3
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Osusume mono wa nandesuka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 5
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Hai, genki desu ka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 29
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Gochisousama deshita!",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 29
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Sorry, I don't understand",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 21
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Tabemono ya nomimono no osusume wo docchi shimasu ka?",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Ryouhou no osusumemono wo onegaishimasu!": 6,
+        "Odenwa bango oshiete kuremasu ka?": 7,
+        "Hima no toki ni nani wo shimasu ka?": 8,
+        "Doubutsu suki desu ka?": 9
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Ryouhou no osusumemono wo onegaishimasu!",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 10
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Odenwa bango oshiete kuremasu ka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 11
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Hima no toki ni nani wo shimasu ka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 12
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Doubutsu suki desu ka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 13
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Hai! Osusume na nomimono wa latte aato no kapachiino. Sugoku kawaii desu yo! Osusume na tabemono wa omuraisu desu. Koko no omraisu wa totemo ninki desu!",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Jya- latte aato to omuraisu wo hitotsu ni shimasu!": 14,
+        "Kyoudai arimasuka?": 15,
+        "Nihongo wo chotto hanashimasu": 16,
+        "Sorry, I don't understand": 17
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Aa.. Sore wa chotto.. She  looks a little embarrassed and moves onto the next customer.",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Hon yomu no wa suki desu. Sumimasen, hokano okyakusan wa mattemasu no de... She moves onto the next customer ",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Hai, suki desu. Sumimasen, hokano okyakusan wa mattemasu no de.. She moves onto the next customer.",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Jya- latte aato to omuraisu wo hitotsu ni shimasu!",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 18
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Kyoudai arimasuka?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Nihongo wo chotto hanashimasu",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Sorry, I don't understand",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 20
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Kashikomarimashita! Sore wa sen gohyaku yen wo kakarimasu.",
+      "player": false,
+      "branching": true,
+      "branches": {
+        "Give 1500 yen": 21,
+        "Give 800 yen": 21,
+        "Give 1300 yen": 21,
+        "Could you tell me how much it costs in English?": 21
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Kyoudai arimasu kedo, sore wa ima no hanashi de wa arimasen. Sumimasen, hokano okyakusan wa mattemasu. She movesonto the next customer.",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Sou desu ka. Nihongo no benkyou ganbatte ne! She smiles at you. Since you're not sure what to say you decide to come back later",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Sumimasen, eigo wo wakarimasen... She doesn't seem to understand English. It may be better to come back later. ",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Give 1500 yen",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Give 800 yen",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 28
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Give 1300 yen",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 28
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Give 1300 yen",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 28
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Could you tell me how much it costs in English?",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 21
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "Kashikomarimashita! Oshosho omachi kudasai! you get your latte and omuraisu.",
+      "player": true,
+      "branching": false,
+      "branches": {
+        "Next": 21
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 1
+    },
+    {
+      "text": "Aa, sumimasen! Chotto tarinai!\nShe looks at you expectantly, then realises you don't understand. She returns your money and moves onto the next customer",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    },
+    {
+      "text": "She looks confused and moves onto the next customer",
+      "player": false,
+      "branching": false,
+      "branches": {
+        "Next": -1
+      },
+      "playerAnimState": 0,
+      "npcAnimState": 1,
+      "progression": 0
+    }
+  ],
+  "NPC": "BaristaBird"
+}

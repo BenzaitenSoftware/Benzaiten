@@ -34,7 +34,7 @@ public class Conversation
             }
             else
             {
-                GameObject.Find("DataHolder").SendMessage("SetProgression", new string[] { NPCString, messageList[currentMessage].Progression.ToString() });
+                GameObject.Find("DataHolder").GetComponent<DataHolder>().player.SetProgression(NPCString, messageList[currentMessage].Progression);
                 return null;
             }  
         }

@@ -24,6 +24,9 @@ public class Message
         this.player = player;
         this.branching = false;
         branches = new Dictionary<string, int>();
+        progression = 0;
+        playerAnimState = 0;
+        npcAnimState = 0;
     }
 
     [JsonIgnore]

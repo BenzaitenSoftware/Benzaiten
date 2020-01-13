@@ -9,11 +9,13 @@ public class CafeController : MonoBehaviour
 {
     private Dictionary<int, string> tableSettings;
     private DataHolder dataHolder;
-    public GameObject panel;
     public TextMeshProUGUI text;
+    public GameObject birdPanel, kaoruPanel;
 
     void Start()
     {
+        SceneManager.sceneLoaded += ProgressionCheck;
+
         try
         {
             dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
@@ -23,12 +25,7 @@ public class CafeController : MonoBehaviour
             Debug.Log(e.StackTrace);
         }
 
-        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-        foreach (GameObject go in allObjects)
-            if (go.name == "DataHolder")
-                print("DataHolder is Present!");
-
-        Debug.Log(dataHolder);
+        ProgressionCheck(new Scene(), LoadSceneMode.Single);
 
         float height = Camera.main.orthographicSize * 2.0f;
         float width = Camera.main.orthographicSize * 2.0f * Screen.width / Screen.height;
@@ -37,31 +34,13 @@ public class CafeController : MonoBehaviour
 
         tableSettings = new Dictionary<int, string>();
         tableSettings[1] = "Kaoru";
-        tableSettings[2] = "Guide";
-
-        string names = "";
-
-        foreach (string name in dataHolder.PlayerProgression.Keys)
-        {
-            if (dataHolder.PlayerProgression[name] >= 1)
-            {
-                names += (name + " ");
-            }
-        }
-
-        if (names != "")
-        {
-            text.text = "One or more conversations completed! Your friends are now: " + names + ". (Social Media to be Implemented!)";
-            panel.SetActive(true);
-        }
+        tableSettings[4] = "Guide";
+        tableSettings[5] = "BaristaBird";
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            panel.SetActive(false);
-        }
+        
     }
 
     public void TableClick(int tableNumber)
@@ -69,11 +48,40 @@ public class CafeController : MonoBehaviour
         if (tableSettings.ContainsKey(tableNumber))
         {
             Debug.Log(tableSettings[tableNumber] + "'s Table has been clicked!");
+            dataHolder.LoadConversation(tableSettings[tableNumber] + ".json");
         }
         else
         {
             Debug.Log("Table " + tableNumber + " does not have a person!");
         }
-        dataHolder.LoadConversation(tableSettings[tableNumber] + ".json");
+    }
+
+    private void ProgressionCheck(Scene scene, LoadSceneMode mode)
+    {
+        if (dataHolder.player.PlayerProgression.ContainsKey("BaristaBird"))
+        {
+            if (dataHolder.player.PlayerProgression["BaristaBird"] >= 1)
+            {
+                birdPanel.SetActive(true);
+                kaoruPanel.SetActive(true);
+                birdPanel.GetComponent<PanelClickScript>().glow = false;
+                kaoruPanel.GetComponent<PanelClickScript>().glow = false;
+            }
+        }
+        else if (dataHolder.player.PlayerProgression.ContainsKey("Kaoru"))
+        {
+            if (dataHolder.player.PlayerProgression["Kaoru"] >= 1)
+            {
+                birdPanel.SetActive(true);
+                kaoruPanel.SetActive(true);
+                birdPanel.GetComponent<PanelClickScript>().glow = true;
+                kaoruPanel.GetComponent<PanelClickScript>().glow = false;
+            }
+        }
+        else if (dataHolder.player.PlayerProgression["Guide"] >= 1)
+        {
+            kaoruPanel.SetActive(true);
+            kaoruPanel.GetComponent<PanelClickScript>().glow = true;
+        }
     }
 }

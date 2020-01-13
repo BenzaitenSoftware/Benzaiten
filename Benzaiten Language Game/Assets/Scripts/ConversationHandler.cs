@@ -7,16 +7,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
 
+#pragma warning disable 0649
+
 public class ConversationHandler : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI playerBubble, npcBubble;
     [SerializeField]
     private Text[] buttonList;
-    [SerializeField]
     private Animator playerAnim, npcAnim;
     [SerializeField]
-    private GameObject guide, kaoru, playerHolder, npcHolder;
+    private GameObject guide, kaoru, baristabird, playerHolder, npcHolder;
 
     private string playerName;
 
@@ -40,7 +41,7 @@ public class ConversationHandler : MonoBehaviour
         {
             DataHolder dataHolder = GameObject.Find("DataHolder").GetComponent<DataHolder>();
             fileName = dataHolder.fileName;
-            playerName = dataHolder.PlayerName;
+            playerName = dataHolder.player.PlayerName;
         }
         catch (Exception e)
         {
@@ -49,10 +50,7 @@ public class ConversationHandler : MonoBehaviour
             endPanel.SetActive(true);
         }
 
-        //currentConversation = JsonConvert.DeserializeObject<Conversation>(File.ReadAllText(Application.dataPath + "/Conversations/" + fileName));
-
         string jsonString = Resources.Load<TextAsset>("Conversations/" + fileName.Replace(".json", "")).ToString();
-        Debug.Log(jsonString);
         currentConversation = JsonConvert.DeserializeObject<Conversation>(jsonString);
 
         // File Writing Code
@@ -111,7 +109,6 @@ public class ConversationHandler : MonoBehaviour
         if (currentMessage == null)
         {
             GameObject.Find("DataHolder").GetComponent<DataHolder>().Play();
-            //endPanel.SetActive(true);
         }
     }
 
@@ -119,15 +116,20 @@ public class ConversationHandler : MonoBehaviour
     {
         GameObject npcPrefab;
 
-        Debug.Log(currentConversation.NPC);
-
         switch (currentConversation.NPC)
         {
             case "Kaoru":
                 npcPrefab = kaoru;
                 break;
+            case "Guide":
+                npcPrefab = guide;
+                break;
+            case "BaristaBird":
+                npcPrefab = baristabird;
+                break;
             default:
                 npcPrefab = guide;
+                Debug.LogError("CURRENT NPC NOT KNOWN");
                 break;
         }
 

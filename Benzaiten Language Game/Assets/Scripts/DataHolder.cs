@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
-using UnityEngine.AddressableAssets;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -13,7 +12,7 @@ public class DataHolder : MonoBehaviour
     public string fileName;
     public Player player;
     private bool fileDetected;
-    private PhraseBook phraseBook;
+    private PhraseBook phrasebook;
     private UnityWebRequest dateConnection;
 
     // Start is called before the first frame update
@@ -21,22 +20,28 @@ public class DataHolder : MonoBehaviour
     { 
         DontDestroyOnLoad(this);
 
+        phrasebook = new PhraseBook();
+
         if (File.Exists(Application.persistentDataPath + "/PlayerData.save"))
         {
-            fileDetected = true;
-            player = JsonConvert.DeserializeObject<Player>(File.ReadAllText(Application.persistentDataPath + "/PlayerData.save"));
+            string jsonString = File.ReadAllText(Application.persistentDataPath + "/PlayerData.save");
+            Debug.Log(jsonString);
+            if (jsonString.Equals("null"))
+            {
+                player = new Player();
+                fileDetected = false;
+            }
+            else
+            {
+                player = JsonConvert.DeserializeObject<Player>(jsonString);
+                fileDetected = true;
+            }
         }
         else
         {
             fileDetected = false;
             player = new Player();
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        Debug.Log("Application Quit!");
-        File.WriteAllText(Application.persistentDataPath + "/PlayerData.save", JsonConvert.SerializeObject(player, Formatting.Indented));
     }
 
     public void Splash(bool connection, UnityWebRequest uwr)
@@ -60,6 +65,12 @@ public class DataHolder : MonoBehaviour
         }
     }
 
+    public void ResetPlayer()
+    {
+        player = new Player();
+        SceneManager.LoadScene("PlayerSetup");
+    }
+
     public void SetupPlayer(string name, int choice)
     {
         player.PlayerName = name;
@@ -81,15 +92,34 @@ public class DataHolder : MonoBehaviour
         
     }
 
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
     public void LoadConversation(string fileName)
     {
         Debug.Log(fileName);
         this.fileName = fileName;
         SceneManager.LoadScene("ConversationScene");
+    }
+
+    private void OnApplicationQuit()
+    {
+        Debug.Log("Application Quit!");
+        SaveProgress();
+    }
+
+    public void SaveProgress()
+    {
+        File.WriteAllText(Application.persistentDataPath + "/PlayerData.save", JsonConvert.SerializeObject(player, Formatting.Indented));
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public PhraseBook Phrasebook
+    {
+        get
+        {
+            return phrasebook;
+        }
     }
 }

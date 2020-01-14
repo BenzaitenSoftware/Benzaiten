@@ -6,16 +6,26 @@ using Newtonsoft.Json;
 
 public class PhraseBook
 {
+    private Object[] textAssets;
     private List<Phrase> phraseList;
 
     public PhraseBook()
     {
-        phraseList = new List<Phrase>();
+        textAssets = Resources.LoadAll("Phrases/", typeof(TextAsset));
 
-        string[] phraseFiles = Directory.GetFiles("Assets/Phrases", "*.json");
-        foreach (string file in phraseFiles)
+        phraseList = new List<Phrase>();
+        
+        foreach(TextAsset obj in textAssets)
         {
-            phraseList.Add(JsonConvert.DeserializeObject<Phrase>(File.ReadAllText(file)));
+            phraseList.Add(JsonConvert.DeserializeObject<Phrase>(obj.text));
+        }
+    }
+
+    public List<Phrase> PhraseList
+    {
+        get
+        {
+            return phraseList;
         }
     }
 }

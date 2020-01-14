@@ -12,7 +12,7 @@
         "Mou ichido itte kudasai!": 0
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -23,7 +23,7 @@
         "Next": 5
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -34,7 +34,7 @@
         "Next": 6
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -45,7 +45,7 @@
         "Next": 7
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -56,7 +56,7 @@
         "Next": 8
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -67,7 +67,7 @@
         "Yoroshiku onegaishimasu!": 9
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -78,7 +78,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -89,7 +89,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -100,7 +100,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -111,7 +111,7 @@
         "Next": 10
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -125,7 +125,7 @@
         "Ohayougozaimasu": 13
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -136,7 +136,7 @@
         "Next": 16
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -147,7 +147,7 @@
         "Next": 14
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -158,7 +158,7 @@
         "Next": 15
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -169,7 +169,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -180,7 +180,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -194,7 +194,7 @@
         "Sou desu ka?": 19
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -205,7 +205,7 @@
         "Next": 20
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -216,7 +216,7 @@
         "Next": 21
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -227,7 +227,7 @@
         "Next": 22
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -238,7 +238,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 1.0
     },
     {
@@ -249,7 +249,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -260,7 +260,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     }
   ],

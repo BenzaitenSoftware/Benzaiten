@@ -5,7 +5,6 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
 
 #pragma warning disable 0649
 
@@ -54,9 +53,6 @@ public class ConversationHandler : MonoBehaviour
 
         string jsonString = Resources.Load<TextAsset>("Conversations/" + fileName.Replace(".json", "")).ToString();
         currentConversation = JsonConvert.DeserializeObject<Conversation>(jsonString);
-
-        // File Writing Code
-        //File.WriteAllText("Assets/Conversations/" + fileName,JsonConvert.SerializeObject(currentConversation, Formatting.Indented));
 
         LoadCharacters();
         NextMessage();
@@ -110,7 +106,8 @@ public class ConversationHandler : MonoBehaviour
 
         if (currentMessage == null)
         {
-            GameObject.Find("DataHolder").GetComponent<DataHolder>().Play();
+            dataHolder.SaveProgress();
+            dataHolder.GetComponent<DataHolder>().Play();
         }
     }
 
@@ -200,7 +197,7 @@ public class ConversationHandler : MonoBehaviour
                 bool active = i <= (numOfButtons - 1);
 
                 buttonList[i].transform.parent.gameObject.SetActive(active);
-                if (active) buttonList[i].text = buttonText[i];
+                if (active) buttonList[i].text = buttonText[i].Replace("~~", dataHolder.player.PlayerName);
             }
         }
         else

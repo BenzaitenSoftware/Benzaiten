@@ -5,10 +5,10 @@ using UnityEngine;
 public class PhoneManager : MonoBehaviour
 {
 
-    private Vector3 yUp, yDown, socialUp, socialDown;
-    private bool show, social;
+    private Vector3 phoneUp, phoneDown, screenUp, screnDown;
+    private bool show, social, settings;
     [SerializeField]
-    private Transform socialTransform;
+    private Transform socialTransform, settingsTransform;
     [SerializeField]
     private GameObject guide, kaoru, bird;
 
@@ -17,15 +17,16 @@ public class PhoneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        yUp = new Vector3(0, -0.4f, 0);
-        yDown = new Vector3(0, -21f, 0);
-        socialUp = new Vector3(0, -0.5f, 0);
-        socialDown = new Vector3(0, -21f, 0);
+        phoneUp = new Vector3(0, -0.45f, 0);
+        phoneDown = new Vector3(0, -21f, 0);
+        screenUp = new Vector3(0, -0.5f, 0);
+        screnDown = new Vector3(0, -21f, 0);
 
         speed = 3f;
 
-        transform.localPosition = yDown;
-        socialTransform.localPosition = socialDown;
+        transform.localPosition = phoneDown;
+        socialTransform.localPosition = screnDown;
+        settingsTransform.localPosition = screnDown;
 
         show = false;
         social = false;
@@ -36,39 +37,55 @@ public class PhoneManager : MonoBehaviour
     {
         if (show)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, yUp, Time.deltaTime * speed);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, phoneUp, Time.deltaTime * speed);
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, yDown, Time.deltaTime * speed);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, phoneDown, Time.deltaTime * speed);
         }
 
         if (social)
         {
-            socialTransform.localPosition = Vector3.Lerp(socialTransform.localPosition, socialUp, Time.deltaTime * speed);
+            socialTransform.localPosition = Vector3.Lerp(socialTransform.localPosition, screenUp, Time.deltaTime * speed);
         }
         else
         {
-            socialTransform.localPosition = Vector3.Lerp(socialTransform.localPosition, socialDown, Time.deltaTime * (speed * 2));
+            socialTransform.localPosition = Vector3.Lerp(socialTransform.localPosition, screnDown, Time.deltaTime * (speed * 2));
         }
 
-        if (Input.GetKeyDown(KeyCode.A)) show = !show;
+        if (settings)
+        {
+            settingsTransform.localPosition = Vector3.Lerp(settingsTransform.localPosition, screenUp, Time.deltaTime * speed);
+        }
+        else
+        {
+            settingsTransform.localPosition = Vector3.Lerp(settingsTransform.localPosition, screnDown, Time.deltaTime * (speed * 2));
+        }
+
     }
 
     public void IconClick(string appName)
     {
-        if (appName == "Social")
+        if (!social || !settings)
         {
-            UpdateSocial();
-            social = true;
+            if (appName == "Social")
+            {
+                UpdateSocial();
+                social = true;
+            }
+            else if (appName == "Settings")
+            {
+                settings = true;
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (social)
+        if (social || settings)
         {
             social = false;
+            settings = false;
         }
         else
         {

@@ -8,6 +8,7 @@ public class PlayerSelector : MonoBehaviour
     [SerializeField]
     private PlayerSelector playera, playerb;
     private SpriteRenderer image;
+    private float change = 0.025f;
 
     public bool selected;
 
@@ -29,8 +30,11 @@ public class PlayerSelector : MonoBehaviour
         if (selected)
         {
             Color temp = image.color;
-            temp.a = 1;
+            temp.a += change;
             image.color = temp;
+
+            if (temp.a >= 1) change = -0.025f;
+            if (temp.a <= 0) change = 0.025f;
         }
         else
         {

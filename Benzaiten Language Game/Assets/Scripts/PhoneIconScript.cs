@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhoneIconScript : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class PhoneIconScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponentInParent<PhoneManager>().IconClick(appName);
+        if (appName == "Phrasebook")
+        {
+            SceneManager.LoadScene("Phrasebook");
+        }
+        else
+        {
+            GetComponentInParent<PhoneManager>().IconClick(appName);
+        }
     }
 }

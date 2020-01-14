@@ -14,7 +14,6 @@ public class SettingsButtons : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("CLICK");
         if (MethodName == "Exit")
         {
             dataHolder.Exit();

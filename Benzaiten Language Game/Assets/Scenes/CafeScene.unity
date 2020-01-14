@@ -510,14 +510,14 @@ RectTransform:
   m_GameObject: {fileID: 384198848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 100, y: 80, z: 1}
   m_Children: []
   m_Father: {fileID: 733153188}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280.5, y: 242.27}
+  m_AnchoredPosition: {x: -306.1, y: 285.8}
   m_SizeDelta: {x: 5.417, y: 4.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &384198850
@@ -761,7 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socialTransform: {fileID: 806305865}
-  phraseTransform: {fileID: 0}
   settingsTransform: {fileID: 1738371959}
   guide: {fileID: 470995347}
   kaoru: {fileID: 2063450571}
@@ -881,7 +880,7 @@ PrefabInstance:
     - target: {fileID: 8357621218653945695, guid: e5c4005bf51586d44905d13ff65b335e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 500.00006
+      value: 470.9
       objectReference: {fileID: 0}
     - target: {fileID: 8357621218653945695, guid: e5c4005bf51586d44905d13ff65b335e,
         type: 3}
@@ -1494,8 +1493,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e82ad763b6ebd5f4eaa88456c493239e,
+      objectReference: {fileID: 21300000, guid: 21210b49e5e0ba04083cbbbc22923c41,
         type: 3}
+    - target: {fileID: 3676502361986171631, guid: e2d8a7c90772ccf46b015149b8780b70,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 805967989938701326, guid: e2d8a7c90772ccf46b015149b8780b70,
         type: 3}
       propertyPath: tableNumber
@@ -2259,8 +2263,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e82ad763b6ebd5f4eaa88456c493239e,
+      objectReference: {fileID: 21300000, guid: 21210b49e5e0ba04083cbbbc22923c41,
         type: 3}
+    - target: {fileID: 3676502361986171631, guid: e2d8a7c90772ccf46b015149b8780b70,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 805967989938701326, guid: e2d8a7c90772ccf46b015149b8780b70,
         type: 3}
       propertyPath: tableNumber
@@ -2509,7 +2518,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e82ad763b6ebd5f4eaa88456c493239e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21210b49e5e0ba04083cbbbc22923c41, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2673,8 +2682,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e82ad763b6ebd5f4eaa88456c493239e,
+      objectReference: {fileID: 21300000, guid: 21210b49e5e0ba04083cbbbc22923c41,
         type: 3}
+    - target: {fileID: 3676502361986171631, guid: e2d8a7c90772ccf46b015149b8780b70,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 805967989938701326, guid: e2d8a7c90772ccf46b015149b8780b70,
         type: 3}
       propertyPath: tableNumber
@@ -3044,7 +3058,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e82ad763b6ebd5f4eaa88456c493239e,
+      objectReference: {fileID: 21300000, guid: 21210b49e5e0ba04083cbbbc22923c41,
         type: 3}
     - target: {fileID: 3676502361986171631, guid: e2d8a7c90772ccf46b015149b8780b70,
         type: 3}

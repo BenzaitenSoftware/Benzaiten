@@ -19,8 +19,8 @@ public class PhrasebookManager : MonoBehaviour
             GameObject tempPhrase = Instantiate(phrasePrefab, transform);
             TextMeshProUGUI[] textList = tempPhrase.GetComponentsInChildren<TextMeshProUGUI>();
 
-            textList[0].text = phrase.japanese;
-            textList[1].text = phrase.english;
+            textList[0].text = phrase.japanese.Replace("~~", dataHolder.player.PlayerName);
+            textList[1].text = phrase.english.Replace("~~", dataHolder.player.PlayerName);
         }
     }
 }

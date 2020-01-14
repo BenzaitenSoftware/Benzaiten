@@ -5,6 +5,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 #pragma warning disable 0649
 
@@ -23,6 +24,7 @@ public class ConversationHandler : MonoBehaviour
     private Conversation currentConversation;
     private Message currentMessage;
     private string currentText, fileName;
+    private Random random;
 
     private float lastTime, delay;
     private int textIndex;
@@ -35,6 +37,7 @@ public class ConversationHandler : MonoBehaviour
 
     void Start()
     {
+        random = new Random();
         lastTime = Time.time;
         delay = 0.02f;
 
@@ -164,6 +167,8 @@ public class ConversationHandler : MonoBehaviour
 
     public void NextMessage(string text)
     {
+        text = text.Replace(dataHolder.player.PlayerName, "~~");
+
         currentMessage = currentConversation.NextMessage(currentMessage.Branches[text]);
 
         LoadMessage();
@@ -197,7 +202,15 @@ public class ConversationHandler : MonoBehaviour
                 bool active = i <= (numOfButtons - 1);
 
                 buttonList[i].transform.parent.gameObject.SetActive(active);
-                if (active) buttonList[i].text = buttonText[i].Replace("~~", dataHolder.player.PlayerName);
+
+                if (active)
+                {
+                    int textIndex = random.Next(0, buttonText.Count - 1);
+
+                    buttonList[i].text = buttonText[textIndex].Replace("~~", dataHolder.player.PlayerName);
+
+                    buttonText.RemoveAt(textIndex);
+                }
             }
         }
         else

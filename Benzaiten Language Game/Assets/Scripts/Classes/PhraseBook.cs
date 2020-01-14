@@ -17,6 +17,7 @@ public class PhraseBook
         
         foreach(TextAsset obj in textAssets)
         {
+            Debug.Log(obj.text);
             phraseList.Add(JsonConvert.DeserializeObject<Phrase>(obj.text));
         }
     }

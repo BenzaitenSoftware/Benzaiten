@@ -38,11 +38,6 @@ public class CafeController : MonoBehaviour
         tableSettings[5] = "BaristaBird";
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void TableClick(int tableNumber)
     {
         if (tableSettings.ContainsKey(tableNumber))

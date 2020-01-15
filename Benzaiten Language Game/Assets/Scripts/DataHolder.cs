@@ -14,6 +14,8 @@ public class DataHolder : MonoBehaviour
     private bool fileDetected;
     private PhraseBook phrasebook;
     private UnityWebRequest dateConnection;
+    private AudioSource audio;
+    private float volume;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,10 @@ public class DataHolder : MonoBehaviour
         DontDestroyOnLoad(this);
 
         phrasebook = new PhraseBook();
+        audio = GetComponent<AudioSource>();
+        volume = 0.5f;
+        audio.volume = volume;
+
 
         if (File.Exists(Application.persistentDataPath + "/PlayerData.save"))
         {
@@ -42,6 +48,12 @@ public class DataHolder : MonoBehaviour
             fileDetected = false;
             player = new Player();
         }
+    }
+
+    public void VolumeUpdate(float value)
+    {
+        volume = value;
+        audio.volume = volume;
     }
 
     public void Splash(bool connection, UnityWebRequest uwr)

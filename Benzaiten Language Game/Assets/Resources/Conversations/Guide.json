@@ -19,7 +19,7 @@
         "Next": 2
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -30,7 +30,7 @@
         "Next": 3
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -41,7 +41,7 @@
         "Next": 4
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -53,7 +53,7 @@
         "Nah, I'm good thanks": 11
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -64,7 +64,7 @@
         "Next": 6
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -77,7 +77,7 @@
         "Thanks, that's enough for today.": 11
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -88,7 +88,7 @@
         "Next": 8
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -99,7 +99,7 @@
         "Next": 9
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -110,7 +110,7 @@
         "I will do!": 10
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -121,7 +121,7 @@
         "Next": 11
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -132,7 +132,7 @@
         "Next": 12
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 0.0
     },
     {
@@ -143,7 +143,7 @@
         "Next": -1
       },
       "playerAnimState": 0,
-      "npcAnimState": 0,
+      "npcAnimState": 1,
       "progression": 1.0
     }
   ],

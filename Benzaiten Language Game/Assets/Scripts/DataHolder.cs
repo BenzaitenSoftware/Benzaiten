@@ -24,7 +24,7 @@ public class DataHolder : MonoBehaviour
 
         phrasebook = new PhraseBook();
         audio = GetComponent<AudioSource>();
-        volume = 0.5f;
+        volume = 0.6f;
         audio.volume = volume;
 
 
@@ -132,6 +132,14 @@ public class DataHolder : MonoBehaviour
         get
         {
             return phrasebook;
+        }
+    }
+
+    public float Volume
+    {
+        get
+        {
+            return volume;
         }
     }
 }

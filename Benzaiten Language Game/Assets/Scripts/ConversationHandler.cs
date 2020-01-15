@@ -17,7 +17,7 @@ public class ConversationHandler : MonoBehaviour
     private Text[] buttonList;
     private Animator playerAnim, npcAnim;
     [SerializeField]
-    private GameObject guide, kaoru, baristabird, player1, player2, player3, playerHolder, npcHolder;
+    private GameObject guide, kaoru, baristabird, player1, player2, player3, playerHolder, npcHolder, exitButton;
 
     private string playerName;
 
@@ -122,15 +122,19 @@ public class ConversationHandler : MonoBehaviour
         {
             case "Kaoru":
                 npcPrefab = kaoru;
+                exitButton.SetActive(true);
                 break;
             case "Guide":
                 npcPrefab = guide;
+                exitButton.SetActive(false);
                 break;
             case "BaristaBird":
                 npcPrefab = baristabird;
+                exitButton.SetActive(true);
                 break;
             default:
                 npcPrefab = guide;
+                exitButton.SetActive(false);
                 Debug.LogError("CURRENT NPC NOT KNOWN");
                 break;
         }

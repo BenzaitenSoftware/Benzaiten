@@ -281,8 +281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -100}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -50, y: -50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144467919
 MonoBehaviour:
@@ -364,7 +364,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f692b1e8fa6c8244d8f613b226b51218, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eadc707caeb81f645a277f31585f5738, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2445,4 +2445,5 @@ MonoBehaviour:
   player3: {fileID: 286006668852831417, guid: d139324d6053f3d48b9c4ab936d93997, type: 3}
   playerHolder: {fileID: 381726642}
   npcHolder: {fileID: 71188152}
+  exitButton: {fileID: 144467917}
   endPanel: {fileID: 1681541461}

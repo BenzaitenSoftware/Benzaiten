@@ -25,7 +25,7 @@ public class PlayerSelector : MonoBehaviour
         playerb.selected = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (selected)
         {

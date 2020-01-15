@@ -24,7 +24,7 @@ public class PanelClickScript : MonoBehaviour, IPointerClickHandler
         if (!GameObject.Find("Phone").GetComponent<PhoneManager>().Show)cafe.TableClick(tableNumber);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (glow)
         {
